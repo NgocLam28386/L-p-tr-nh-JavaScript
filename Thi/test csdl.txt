@@ -1,0 +1,72 @@
+--create database QLDA1
+--go
+use QLDA1
+go
+
+create table DuAn
+(
+MaDA char(5),
+TenDA varchar(50),
+DiaDiem varchar(50),
+constraint PK_DuAn primary key (MaDA)
+)
+
+create table NhanVien
+(
+MaNV char(5),
+HoTen varchar(50),
+NgaySinh date,
+QueQuan nvarchar(30),
+SDT varchar(15),
+HeSoLuong int,
+constraint PK_NhanVien primary key (MaNV)
+)
+
+create table NV_DA
+(
+MaNV char(5),
+MaDA char(5),
+NgayThamGia date,
+NgayKetThuc date,
+constraint NV_DA primary key (MaNV,MaDA)
+constraint FK_NV_DA_NhanVien foreign key (MaNV) references NhanVien(MaNV),
+constraint FP_NV_DuAn_DuAn foreign key (MaDA) references DuAn(MaDA)
+)
+
+insert into DuAn(MaDA,TenDA,DiaDiem)
+values ('DA1',N'quan ly sach',N'Cau Giay'),
+       ('DA2',N'quan ly vo',N'My Dinh'),
+       ('DA3',N'quan ly xe',N'Dien'),
+       ('DA4',N'quan ly sach',N'Nhon'),
+       ('DA5',N'quan ly oto',N'Pham Hung')
+
+insert into NhanVien(MaNV,HoTen,NgaySinh,QueQuan,SDT,HeSoLuong)
+values ('NV001',N'Dinh Ngoc Lam','2003-07-19','Nam Dinh','0946125926',3),
+       ('NV002',N'Mai Anh Quan','1999-01-24','Nam Dinh','0123456789',6),
+	   ('NV003',N'Pham Thi Hang','1990-10-23','Truc Cat','0234567890',3),
+	   ('NV004',N'Mac Thao Thinh','2002-11-15','Hai Duong','0626262626',6),
+	   ('NV005',N'Vu Kieu Trinh','2003-12-29','Nam Dinh','0838683868',3)
+
+insert into NV_DA(MaNV,MaDA,NgayThamGia,NgayKetThuc)
+values ('NV001','DA1','2023-06-19','2023-07-19'),
+       ('NV002','DA2','2023-05-19','2023-06-19'),
+	   ('NV003','DA3','2023-04-19','2023-05-19'),
+	   ('NV004','DA4','2023-03-19','2023-04-19'),
+	   ('NV005','DA5','2023-02-19','2023-02-19')
+
+select * from NhanVien;
+select * from DuAn;
+select * from NV_DA;
+-- Cau 1.in danh sách mã nv,họ tên , ngày sinh của nv sn 1990
+select MaNV,HoTen,NgaySinh 
+from NhanVien
+where YEAR(NgaySinh)=1990;
+--Cau 2; tìm thông tin nv có mã da1,da2
+select * from NhanVien
+inner join NV_DA
+on NhanVien.MaNV=NV_DA.MaNV
+where NV_DA.MaDA in('DA1','DA2');
+
+update NhanVien
+set HoTen= 'Tạ Thị Bích Loan'
+where MaNV='NV001'

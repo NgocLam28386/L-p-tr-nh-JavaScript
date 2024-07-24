@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FPoly</title>
+    <script src="angular.js"></script>
+    <script src="firebase.js"></script>
+  </head>
+  <body ng-app="chatApp">
+    <div ng-controller="chatCtrl">
+      <h3>Chatting as: {{name}}</h3>
+      <p>Name <input type="text" ng-model="name" /></p>
+      <p>Massage <input type="text" ng-model="msg" /></p>
+      <p>
+        <button ng-click="send()">Send</button>
+        <button ng-click="clear()">Clear</button>
+      </p>
+      <p ng-repeat="item in chat"><b>{{item.name}}</b>: {{item.msg}}</p>
+    </div>
+
+    <script>
+      var app = angular.module("chatApp", []);
+      app.controller("chatCtrl", function ($scope) {
+        var data = new Firebase(
+          "https://ph20520-a7987-default-rtdb.firebaseio.com/"
+        );
+        $scope.chat = [];
+        data.on("value", function (nodes) {
+          nodes.forEach(function (childNode) {
+            $scope.chat.push(childNode.val());
+          });
+        });
+
+        $scope.send = function () {
+          $scope.chat = [];
+          data.push({
+            name: $scope.name,
+            msg: $scope.msg,
+          });
+          $scope.msg = "";
+        };
+        $scope.clear = function () {
+          data.remove();
+          $scope.chat = [];
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function tong (x,y){
+        //     return x+y;
+        // }
+        // function hieu(x,y){
+        //   return x-y;
+        //   var ok=confirm("Ban chac chan xoa hay khong?");
+        //   if(ok==true){
+        //       alert("Da xoa thanh cong");
+        //       document.write("Tong 2 so la:"+tong(30,20));
+              //else{
+                //doAnthingElse();
+              //}
+              function xacnhan(traloi){
+                  var ketQua="";
+                  if (traloi){
+                      ketQua="Tuyet voi, chuc banj chien thang";
+                  }
+                  else{
+                      ketQua= "Hen gap lai ban";
+                  }
+                  return ketQua;
+              }
+              var traloi=confirm("Ban co choi game khong?");
+              var thongbao=xacnhan(traloi);
+              alert (thongbao);
+          
+        
+    </script>
+</body>
+</html>

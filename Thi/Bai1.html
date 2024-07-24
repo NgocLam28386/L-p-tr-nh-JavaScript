@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        width: 650px;
+        border: 1px solid blue;
+        text-align: center;
+        padding-bottom: 10px;
+        margin: 50px auto;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a">
+      <h2>SLIDE SHOW CHẠY TỰ ĐỘNG</h2>
+      <img src="tour1.jpg" id="anh" />
+      <p><button onclick="_pre()">Pre</button>
+        <button onclick="_stop()">Stop</button>
+        <button onclick="_auto()">Auto</button>
+        <button onclick="_next()">Next</button></p>
+    </div>
+
+    <script>
+      var slides = [];
+      document.body.onload = function () {
+        for (var i = 0; i < 5; i++) {
+          slides[i] = new Image();
+          slides[i].src = "tour" + (i + 1) + ".jpg";
+        }
+        _auto();
+      };
+      var index = 0;
+      var hinh = document.querySelector("#anh");
+      function _next() {
+        index++;
+        if (index > 4) {
+          index = 0;
+        }
+        hinh.src = slides[index].src;
+      }
+
+      function _pre() {
+        index--;
+        if (index < 0) {
+          index = 4;
+        }
+        hinh.src = slides[index].src;
+      }
+      var s;
+      function _auto() {
+        s = setInterval("_next()", 1500);
+      }
+      function _stop() {
+        clearInterval(s);
+      }
+    </script>
+  </body>
+</html>

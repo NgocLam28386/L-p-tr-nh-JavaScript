@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../css/order.css">
+<body>
+    <div class="container">
+        <div class="title">Mua hàng</div>
+<hr>
+<form action="">
+    <div class="form-group">
+        <label for="" class="form-lable">Lọc mức giá:</label>
+        <select name="" id="pricelevel" class="form-control">
+            <option value="0">Tất cả</option>
+            <option value="1">&lt; 100</option>
+            <option value="2">90-100</option>
+            <option value="3">400-450</option>
+            <option value="4">600-700</option>
+            <option value="7">&gt; 700</option>
+
+        </select>
+    </div>
+</form>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="checkcolumns">
+                <input type="text" name="" id="all">
+            </th>
+            <th class="namecolumns">Hàng hóa</th>
+            <th class="pricecolumns">Đơn giá</th>
+            <th class="qtycolumn">Số lượng</th>
+            <th class="amountcolumn">Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Iphone 9</td>
+            <td>700</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">0</span></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>SamSung</td>
+            <td>400</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">400</span></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Nokia</td>
+            <td>100</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">0</span></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Sony Xperia</td>
+            <td>450</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">0</span></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Motorola</td>
+            <td>180</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">0</span></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Oppo</td>
+            <td>600</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">0</span></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>BPhone</td>
+            <td>90</td>
+            <td>
+                <input type="text">
+            </td>
+            <td> <span id="amount">180</span></td>
+        </tr>
+
+
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="totallabel">Tổng tiền:</td>
+            <td><span id="total" class="total">580</span></td>
+        </tr>
+    </tfoot>
+</table>
+    </div>
+</body>
+</html>

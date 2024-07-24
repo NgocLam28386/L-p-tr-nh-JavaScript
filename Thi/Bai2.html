@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .colo {
+        color: red;
+        margin-left: 50px;
+      }
+      label {
+        margin-left: 50px;
+      }
+      .one {
+        position: relative;
+        border: 1px solid black;
+        width: 400px;
+        margin: 50px auto;
+        padding-bottom: 15px;
+      }
+      h1 {
+        text-align: center;
+        color: blue;
+      }
+      .sub {
+        text-align: center;
+      }
+      .in {
+        background-color: blue;
+        color: #fff;
+        font-size: 14px;
+        width: 50px;
+        height: 25px;
+      }
+      .ll {
+        position: absolute;
+        right: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <form name="_form" onsubmit="return DK()">
+        <h1>ĐĂNG KÍ THÀNH VIÊN</h1>
+        <div>
+          <label>User</label>
+          <input type="text" id="name" class="ll" />
+          <p class="colo" id="checkName"></p>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="text" id="email" class="ll" />
+          <p class="colo" id="checkEmail"></p>
+        </div>
+        <div>
+          <label>Pass Word</label>
+          <input type="password" id="pass" class="ll" />
+          <p class="colo" id="checkPass"></p>
+        </div>
+        <div>
+          <label>Số năm làm việc</label>
+          <input type="text" id="namLV" class="ll" />
+          <p class="colo" id="checkNamLV"></p>
+        </div>
+        <div class="sub"><input class="in" type="submit" value="Gửi" /></div>
+      </form>
+    </div>
+
+    <script>
+      function thongbao(element, msg) {
+        document.getElementById(element).innerHTML = msg;
+      }
+
+      function DK() {
+        var name = document._form.name.value;
+        var email = document._form.email.value;
+        var pass = document._form.pass.value;
+        var namLV = document._form.namLV.value;
+
+        var s = true;
+        //validate name
+        if (name == "") {
+          thongbao("checkName", "Name không được trống");
+          s = false;
+        } else {
+          thongbao("checkName", "");
+        }
+        //VALIDATE email
+        var regEmail = /^\w+@\w+\.\w{2,3}$/;
+        if (email == "") {
+          thongbao("checkEmail", "Email không được trống");
+          s = false;
+        } else if (!email.match(regEmail)) {
+          thongbao("checkEmail", "Email không đúng định dạng");
+          s = false;
+        } else {
+          thongbao("checkEmail", "");
+        }
+        //validate pass
+        var regPass = /^\w{5,}$/;
+        if (pass == "") {
+          thongbao("checkPass", "PassWord không được trống");
+          s = false;
+        } else if (!pass.match(regPass)) {
+          thongbao("checkPass", "PassWord ít nhất 6 kí tự và 1 số");
+          s = false;
+        } else {
+          thongbao("checkPass", "");
+        }
+        //validate năm làm việc
+        var regNamLV = /^\d+$/;
+        if (namLV == "") {
+          thongbao("checkNamLV", "Năm làm việc không được trống");
+          s = false;
+        } else if (!namLV.match(regNamLV)) {
+          thongbao("checkNamLV", "Năm làm việc phải là số");
+          s = false;
+        } else {
+          thongbao("checkNamLV", "");
+        }
+
+        //kiểm tra lần cuối
+        if (s) {
+          alert("ĐĂNG KÍ THÀNH CÔNG");
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

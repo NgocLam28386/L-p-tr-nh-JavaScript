@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <script>
+        function fibonaci()
+        {
+            var fo = prompt("Nhập số fo: ");
+            var f1 = prompt("Nhập số f1: ");
+            var so = new Array();
+            var fibo="";
+
+            for(var i=2;i<10;i++)
+            {
+                so [0] = Number(fo);
+
+                so [1] = Number(f1);
+                
+                so[i] = so [i-1] + so[i-2];
+
+                fibo = fibo.concat(so[i]+",");
+            }
+            alert("Dãy số là" + String(fo)+","+ String(f1)+","+fibo);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        fibonaci();
+    </script>
+</body>
+</html>

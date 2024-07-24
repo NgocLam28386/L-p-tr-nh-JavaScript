@@ -1,0 +1,52 @@
+.container{
+    /* background-color: ; */
+    margin: auto;
+    width: 50%;
+}
+.title{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    color: #107dd6;
+}
+table,th,td,tr{
+    border: 1px solid rgb(30, 211, 243);
+    border-collapse:collapse ;
+    padding: 5px;
+}
+thead{
+    background-color: rgb(105, 250, 21);
+    color: rgb(4,78,121);
+
+}
+tr:nth-child(even){
+    background-color: #dcdcdc;
+
+}
+table{
+    width: 100%;
+}
+.checkcolumns{
+    width: 40px;
+    text-align: left;
+}
+.namecolumn{
+    width: 40%;
+    text-align: left;
+}
+.pricecolumn{
+    width: 10%;
+}
+.qtycolumn{
+    width: 30%;
+}
+.totallable{
+    text-align: center;
+    font-weight: bold;
+    color:#107dd6;
+}
+.amount,.total{
+    text-align: center;
+    font-weight: bold;
+    color: #107dd6;
+}

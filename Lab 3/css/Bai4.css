@@ -1,0 +1,30 @@
+.container{
+    width: 330px;
+    height: 380px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.title{
+    flex-grow: 1;
+    height: 30px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: rgb(221, 221, 221);
+    color: rgb(53, 32, 238);
+    padding-top: 10px;
+}
+.buttons{
+    flex-grow: 1;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between ;
+}
+.button{
+    width: 70px;
+}

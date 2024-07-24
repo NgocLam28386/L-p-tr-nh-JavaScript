@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+</head>
+<body>
+    <img onmouseover="fover()" onmouseout="fout()" id="anh" src="./img/">
+    <script>
+        var out = new Image();
+        out.src = "img/ảnh 1.jpg";
+        var over = new Image();
+        over.src = "img/ảnh 2.png";
+        function fover() {
+            var anh = document.getElementById("anh");
+            anh.src = over.src;
+        }
+        function fout() {
+            var anh = document.getElementById("anh");
+            anh.src = out.src;
+        }
+    </script>
+</body>
+</html>

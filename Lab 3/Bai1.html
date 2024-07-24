@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <script>
+        function mayTinhSoHoc()
+        {
+            var a = prompt("a=");
+            var b = prompt("b=");
+            var pheptinh = prompt("Nhập vào phép tính +,-,*,/");
+            switch(pheptinh)
+            {
+                case '+':
+                    c=Number(a) + Number(b);
+                    alert("Tổng là: "+ c)
+                    break;
+
+                case '-':
+                    c=Number(a) - Number(b);
+                    alert("Tích là: "+ c)
+                    break;
+
+                case '*':
+                    c=Number(a) * Number(b);
+                    alert("Hiệu là: "+ c)
+                    break;
+
+                case '/':
+                    c=Number(a) / Number(b);
+                    alert("Thương là: "+ c)
+                    break;
+                    
+                default:
+                    alert("Không phải là toán tử"+ o)
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        mayTinhSoHoc();
+    </script>
+</body>
+</html>

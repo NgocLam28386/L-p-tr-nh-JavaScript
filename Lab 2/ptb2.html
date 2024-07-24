@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        var a = prompt("Nhập vào a: ");
+        var b = prompt("Nhập vào b:");
+        var c = prompt("Nhập vào c:");
+        var delta = Math.pow(b,2) - 4 * a * c;
+        if(delta < 0){
+            alert("Phương trình vô nghiệm");
+        }
+        else if(delta == 0){
+            alert("Phương trình có nghiệm kép x0 = " + b/(2*a));
+        }
+        else{
+            alert("Phương trình có 2 nghiệm phân biệt: " +(-b + Math.sqrt(delta))/(2*a)+(-b + Math.sqrt(delta))/(2*a));
+        }
+    </script>
+</body>
+</html>

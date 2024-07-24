@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.Khai báo
+        var a,b,pheptoan;
+        a=Number(prompt("Nhập a= "));
+        b=Number(prompt("Nhập b= "));
+        pheptoan= prompt("Nhập phép toán(+,-,x,/) : ");
+    </script>
+</head>
+<body>
+    <script>
+        //2.Xử lý
+        switch(pheptoan)
+        {
+            case "+":
+                //xuất kết quả
+                document.write(a+ "+" + b + "=" +(a+b));
+                break;//Thoát khỏi switch
+                
+            case "-":
+                //xuất kết quả
+                document.write(a+ "-" + b + "=" +(a-b));
+                break;//Thoát khỏi switch
+
+            case "x":
+                //xuất kết quả
+                document.write(a+ "x" + b + "=" +(axb));
+                break;//Thoát khỏi switch
+
+            case "/":
+                //xuất kết quả
+                document.write(a+ ":" + b + "=" +(a/b));
+                break;//Thoát khỏi switch
+
+            default:
+                //xuất kết quả
+                document.write("Không phải là toán tử "+ pheptoan);
+                break;//Thoát khỏi switch
+        }
+    </script>
+</body>
+</html>

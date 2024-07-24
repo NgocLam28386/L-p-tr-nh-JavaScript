@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    color: rgb(230, 6, 174);
+}
+.container{
+    width: 50%;
+    margin: auto;
+}
+.form-goup{
+    margin: 7px;
+    display: block;
+}
+.form-lable{
+    width: 100px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.form-control,.form-control-checkbox,.form-control-select,.form-control-textarena{
+    padding: 5px 10px;
+    border: 2px solid royalblue;
+}
+.form-control-textarena{
+    height: 100px;
+}
+.form-control,.form-control-select,.form-control-textarena{
+    width: 100%;
+}
+.form-control-checkbox,.form-control-radio{
+    display: inline-block;
+    margin-right: 5px;
+}
+.form-control:focus,.form-control-checkbox:focus,.form-control-radio:focus
+,.form-control-select:focus,.form-control-textarena:focus{
+    outline: none !important;
+    order: 1px solid rgb(87, 233, 197);
+    box-shadow: 0 0 10px #62d12f;
+}
+.tieude{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(248, 104, 48);
+}
+.btn{
+    border-radius: 10px;
+    height: 35px;
+    width: 70px;
+    background-color: rgb(134, 245, 221);
+    box-shadow: 2px 3px rgb(3,139,110);
+    cursor: pointer;
+    color: rgb(59, 8, 246);
+}
+.btn:hover{
+    background-color: rgb(15,241,230);
+    cursor: pointer;
+    box-shadow: 2px 3px rgb(103,224,22);
+}
+.btns{
+    text-align: center;
+}
+.border-group{
+    border: 1px solid rgb(42,196,235);
+    padding: 8px;
+    width: 100%;
+}
